@@ -54,21 +54,21 @@ def validate_route(lst:list[list[str]], lst2:list[str]):
             return True
 # Part 6
 def longest_repetition(lst:list[int]):
-    longest_index = None
-    longest_length = 0
-    current_length = 1
-    current_index = 0
+    idx = None
+    length = 0
+    this_length = 1
+    this_idx = 0
 
     for i in range(1, len(lst)):
         if lst[i] == lst[i - 1]:
-            current_length += 1
+            this_length += 1
         else:
-            if current_length > longest_length:
-                longest_length = current_length
-                longest_index = current_index
-            current_length = 1
-            current_index = i
-    if current_length > longest_length:
-        longest_index = current_index
+            if this_length > length:
+                length = this_length
+                idx = this_idx
+            this_length = 1
+            this_idx = i
+    if this_length > length:
+        idx = this_idx
 
-    return longest_index
+    return idx
